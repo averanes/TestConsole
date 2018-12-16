@@ -6,16 +6,8 @@
 package testconsole;
 
 import java.awt.Point;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  *
@@ -42,27 +34,13 @@ public class TestConsole {
 //        
 //      
 //    }
-    public static void tricky(Point arg1, Point arg2) {
-        arg1.x = 100;
-        arg1.y = 100;
-        Point temp = arg1;
-        arg1 = arg2;
-
-        arg2 = temp;
-
-    }
+   
 
     public static void main(String[] args) {
 
         try {
-            /*Properties p = new Properties();
-            p.load(new FileReader("MPVSBPP_SET1_IT200_ITV1_NT1_TS3_WT1_VT1_REP1.dat"));
-            
-            for (Object valor : p.keySet()) {
-            System.out.println(valor +" : "+ p.get(valor));
-            }*/
-            
-            
+           
+            JavaScriptEval.evalList("[1, 7, 3, 5, 4, 9]");
             
             /* ArrayList<ArrayList<Integer>> a = JavaScriptEval.eval("[[1, 7, 3], [5, 4, 9]];");
             
@@ -73,13 +51,32 @@ public class TestConsole {
             System.out.println("");
             
             }*/
+            
+            
+            
+            
+             /*Properties p = new Properties();
+            p.load(new FileReader("MPVSBPP_SET1_IT200_ITV1_NT1_TS3_WT1_VT1_REP1.dat"));
+            
+            for (Object valor : p.keySet()) {
+            System.out.println(valor +" : "+ p.get(valor));
+            }*/
+            
         } catch (Exception ex) {
             Logger.getLogger(TestConsole.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
     
-   
+    public static void tricky(Point arg1, Point arg2) {
+        arg1.x = 100;
+        arg1.y = 100;
+        Point temp = arg1;
+        arg1 = arg2;
+
+        arg2 = temp;
+
+    }
     
 }
 //    int [] demand = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};

@@ -7,6 +7,7 @@ package testconsole;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.logging.Level;
@@ -22,19 +23,17 @@ import javax.script.ScriptException;
 public class JavaScriptEval {
     
     
-    
-    
     /**
-     Ej de valor que recibe: "[[1, 7, 3], [5, 4, 9]];"
+     Ej de valor que recibe: "[1, 7, 3, 5, 4, 9]];"
      */
-    public static ArrayList<ArrayList<Integer>> eval(String arrayPrimitiveSimple){
+    public static ArrayList<Integer> evalList(String arrayPrimitiveSimple){
     
         try {
             ScriptEngineManager manager = new ScriptEngineManager();
             ScriptEngine engine = manager.getEngineByName("js");
             
             
-            /*String arraySimple = "java.util.Arrays.asList([1, 7, 3, 4])";
+            String arraySimple = "java.util.Arrays.asList("+arrayPrimitiveSimple+")";
            
             Object result = engine.eval(arraySimple);
             
@@ -42,14 +41,30 @@ public class JavaScriptEval {
             
             for (int i = 0; i < a.size(); i++) {
             System.out.println(a.get(i));
-            }*/
+            }
             
             
-            //System.out.println(engine.eval(arrayPrimitiveSimple));
+            
+        } catch (ScriptException ex) {
+            Logger.getLogger(JavaScriptEval.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return null;
+    }
+    
+    
+    
+    /**
+     Ej de valor que recibe: "[[1, 7, 3], [5, 4, 9]];"
+     */
+    public static ArrayList<ArrayList<Integer>> evalMatrix(String arrayPrimitiveSimple){
+    
+        try {
+            ScriptEngineManager manager = new ScriptEngineManager();
+            ScriptEngine engine = manager.getEngineByName("js");
+               
             jdk.nashorn.api.scripting.ScriptObjectMirror  resultInt =  (jdk.nashorn.api.scripting.ScriptObjectMirror) engine.eval(arrayPrimitiveSimple);
-            // System.out.println(resultInt.getClass() + " "+resultInt);
-            
-            //resultInt.values().toArray()
+           
             ArrayList<ArrayList<Object>> lista = new ArrayList<ArrayList<Object>>();
             
             for (int i = 0; i < resultInt.size(); i++) {
