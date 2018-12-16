@@ -24,7 +24,7 @@ public class JavaScriptEval {
     
     
     /**
-     Ej de valor que recibe: "[1, 7, 3, 5, 4, 9]];"
+     Ej de valor que recibe: "[1, 7, 3, 5, 4, 9]"
      */
     public static ArrayList<Integer> evalList(String arrayPrimitiveSimple){
     
